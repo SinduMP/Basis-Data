@@ -52,60 +52,60 @@ INSERT INTO mhsbank VALUES
 SELECT * 
 FROM mhs LEFT OUTER JOIN krs ON mhs.nim = krs.nim;
 
-•	Merupakan perintah join untuk menampilkan semua data sebelah kiri dari table yang di joinkan dan menampilkan data sebelah kanan yang cocok dengan kondisi join. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis.
+--	Merupakan perintah join untuk menampilkan semua data sebelah kiri dari table yang di joinkan dan menampilkan data sebelah kanan yang cocok dengan kondisi join. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis.
 
 --2. 
 SELECT * 
 FROM krs RIGHT OUTER JOIN mhs ON mhs.nim = krs.nim;
 
-•	Menampilkan semua data yang ada di table sebelah kanan dan mencari kecocokan key pada table sebelah kiri. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis pada table sebelah kiri.
+--	Menampilkan semua data yang ada di table sebelah kanan dan mencari kecocokan key pada table sebelah kiri. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis pada table sebelah kiri.
 
 --3.
 SELECT * 
 FROM mhs RIGHT OUTER JOIN krs ON mhs.nim = krs.nim;
 
-•	Menampilkan semua data yang ada di table sebelah kanan dan mencari kecocokan key pada table sebelah kiri. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis pada table sebelah kiri
+--	Menampilkan semua data yang ada di table sebelah kanan dan mencari kecocokan key pada table sebelah kiri. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis pada table sebelah kiri
 
 --4.
 SELECT nim, nama, bank, saldo 
 FROM mhs RIGHT OUTER JOIN mhsbank ON mhs.noktp = mhsbank.noktp;
 
-•	Menampilkan data nim, nama, bank saldo yang ada di table mhs dan mencari kecocokan key pada table mhsbank. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis pada table sebelah kiri.
+--	Menampilkan data nim, nama, bank saldo yang ada di table mhs dan mencari kecocokan key pada table mhsbank. Jika tidak ditemukan kecocokan, maka akan di set NULL secara otomatis pada table sebelah kiri.
 
 --5.
 SELECT * 
 FROM mhsbank
 WHERE saldo = (SELECT MAX(saldo) FROM mhsbank);
 
-•	Menampilkan data yang ada di tabel mhsbank dimana saldo yang paling tinggi.
+--	Menampilkan data yang ada di tabel mhsbank dimana saldo yang paling tinggi.
 
 --6.
 SELECT nim, nama 
 FROM mhs
 WHERE EXISTS (SELECT * FROM mhsbank WHERE mhs.noktp = mhsbank.noktp);
 
-•	Menampilkan data nim,nama yang ada di table mhs untuk menguji keberadaan rekaman apa pun di subkueri dan mengembalikan nilai true jika subkueri mengembalikan satu atau beberapa rekaman.
+--	Menampilkan data nim,nama yang ada di table mhs untuk menguji keberadaan rekaman apa pun di subkueri dan mengembalikan nilai true jika subkueri mengembalikan satu atau beberapa rekaman.
 
 --7.
 SELECT nim, nama 
 FROM mhs
 WHERE NOT EXISTS (SELECT * FROM mhsbank WHERE mhs.noktp = mhsbank.noktp);
 
-•	Menampilkan data nim,nama yang ada di table mhs untuk menguji keberadaan rekaman apa pun di subkueri dan mengembalikan nilai false jika subkueri mengembalikan satu atau beberapa rekaman.
+--	Menampilkan data nim,nama yang ada di table mhs untuk menguji keberadaan rekaman apa pun di subkueri dan mengembalikan nilai false jika subkueri mengembalikan satu atau beberapa rekaman.
 
 --8.
 SELECT noktp, saldo 
 FROM mhsbank
 WHERE saldo > ANY (SELECT saldo FROM mhsbank);
 
-•	Menampilkan data noktp, saldo pada tabel mhsbank dimana saldo mengembalikan TRUE dan menemukan rekaman ANY di tabel mhs di mana saldo> saldo from mhsbank:
+--	Menampilkan data noktp, saldo pada tabel mhsbank dimana saldo mengembalikan TRUE dan menemukan rekaman ANY di tabel mhs di mana saldo> saldo from mhsbank:
 
 --9.
 SELECT noktp, saldo 
 FROM mhsbank
 WHERE saldo < ALL (SELECT saldo FROM mhsbank WHERE bank = "BCA");
 
-•	Menampilkan noktp, saldo yang ada pada tabel mhsbank dan mengembalikan nilai benar jika semua nilai subkueri memenuhi kondisi.
+--	Menampilkan noktp, saldo yang ada pada tabel mhsbank dan mengembalikan nilai benar jika semua nilai subkueri memenuhi kondisi.
 
 
 
