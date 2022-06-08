@@ -106,12 +106,41 @@ FROM mhsbank
 WHERE saldo < ALL (SELECT saldo FROM mhsbank WHERE bank = "BCA");
 
 --	Menampilkan noktp, saldo yang ada pada tabel mhsbank dan mengembalikan nilai benar jika semua nilai subkueri memenuhi kondisi.
-//10 point 7
-SELECT judul_buku, isbn, nama_pengarang, nama_penerbit, harga_buku, stock
-FROM tbuku_fahri s
-INNER JOIN tpenerbit a on s.id_tpenerbit = a.id_penerbit
-INNER JOIN tpengarang b on s.id_tpengarang = b.id_pengarang
-;
+
+
+10.
+
+5
+
+7
+SELECT tbuku_fadhil.judul_buku, tbuku_fadhil.isbn, tpengarang_fadhil.nama_pengarang, tpenerbit_fadhil.nama_penerbit, tbuku_fadhil.harga_buku, tbuku_fadhil.stock
+FROM tpenerbit_fadhil
+JOIN tbuku_fadhil 
+ON tpenerbit_fadhil.id_penerbit = tbuku_fadhil.id_tpenerbit
+JOIN tpengarang_fadhil
+ON tbuku_fadhil.id_tpengarang = tpengarang_fadhil.id_pengarang;
+
+
+8
+SELECT tbuku_fadhil.judul_buku, tbuku_fadhil.isbn, tpengarang_fadhil.nama_pengarang, tpenerbit_fadhil.nama_penerbit, tbuku_fadhil.harga_buku, tbuku_fadhil.stock
+FROM tpenerbit_fadhil
+JOIN tbuku_fadhil 
+ON tpenerbit_fadhil.id_penerbit = tbuku_fadhil.id_tpenerbit
+JOIN tpengarang_fadhil
+ON tbuku_fadhil.id_tpengarang = tpengarang_fadhil.id_pengarang
+WHERE tbuku_fadhil.harga_buku BETWEEN '70' AND '100'
+ORDER BY(tbuku_fadhil.judul_buku) ASC;
+
+9 
+SELECT tbuku_fadhil.judul_buku, tbuku_fadhil.isbn, tpengarang_fadhil.nama_pengarang, tpenerbit_fadhil.nama_penerbit, tbuku_fadhil.harga_buku, tbuku_fadhil.stock
+FROM tpenerbit_fadhil
+JOIN tbuku_fadhil 
+ON tpenerbit_fadhil.id_penerbit = tbuku_fadhil.id_tpenerbit
+JOIN tpengarang_fadhil
+ON tbuku_fadhil.id_tpengarang = tpengarang_fadhil.id_pengarang
+WHERE tpenerbit_fadhil.nama_penerbit = 'LENTERA ILMU' AND tbuku_fadhil.harga_buku < '100'
+ORDER BY(tbuku_fadhil.judul_buku) DESC;
+
 
 
 
