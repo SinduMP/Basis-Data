@@ -4,6 +4,14 @@ nama Char(20) Not Null,
 tgl_lahir Date Not Null,
 sex Char(1) Not Null);
 
+Insert Into barang (kode, nama, jenis, harga, jumlah, pemasok) 
+Values
+('10001', 'Buku123', 'ATK', '5000', '100', '101'),
+('10002', 'Buku007', 'ATK', '5500', '200', '505'),
+('10003', 'Pensil Panjang', 'ATK', '1000', '250', '101'),
+('10004', 'Indomei Udang', 'Makanan', '2500', '10', '201'),
+('10005', 'Indomei Kentang', 'Makanan', '3000', '100', '201');
+
 Create Table film (
 kode_film Char(5) Primary Key Not Null,
 judul Char(30) Not Null,
