@@ -80,7 +80,7 @@ SELECT * FROM barang;
 
 SELECT * FROM jual;
 
-INSERT jual 
+INSERT INTO jual 
 VALUES ('J0001', '10004', 2);
 
 SELECT * FROM jual;
