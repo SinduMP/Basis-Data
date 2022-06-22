@@ -3,6 +3,14 @@
 CREATE TABLE barang 
 (kode char(5), nama varchar(20), jenis varchar(15), harga int, jumlah int, pemasok char(5));
 
+INSERT INTO barang VALUES 
+    ('10001','Buku123','ATK',5000,100,'101'),
+    ('10002','Buku007','ATK',5500,200,'505'),
+    ('10003','Pensil Panjang','ATK',1000,250,'101'),
+    ('10004','Indomie Udang','Makanan',2500,10,'201'),
+    ('10005','Indomie Kentang','Makanan',3000,100,'201');
+
+
 --2. Tabel jual
 CREATE TABLE jual 
 (notrans char(5), kode char(5), jumlah int);
