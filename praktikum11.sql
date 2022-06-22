@@ -13,6 +13,8 @@ CREATE TABLE beli
 
 --A. TRIGGER
 --1. TRIGGER insjual_updjumlah
+
+DELIMITER //
 CREATE TRIGGER insjual_updjumlah
 BEFORE INSERT
 ON jual
@@ -22,3 +24,24 @@ BEGIN
 	WHERE kode = new.kode;
 END//
 
+--2. TRIGGER insbeli_updharga
+
+DELILITER //
+CREATE TRIGGER insbeli_updharga
+BEFORE INSERT
+ON beli
+FOR EACH ROW
+BEGIN
+	declare xharga int;
+	set xharga = (select harga from barang
+		where kode = new.kode);
+	if (xharga < new.harga) then
+		update barang set
+		harga = new.harga + (new.harga * 25/100),
+		jumlah = (jumlah + new.jumlah)
+		where kode = new.kode;
+	else
+		update barang set jumlah = (jumlah + new.jumlah)
+		where kode = new.kode;
+	end if;
+END //
