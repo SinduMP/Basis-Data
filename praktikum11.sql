@@ -75,4 +75,14 @@ VALUES
 SELECT * FROM beli;
 SELECT * FROM barang;
    
---2. 
+--2. Isikan data jual
+SELECT * FROM barang;
+
+SELECT * FROM jual;
+
+INSERT jual 
+VALUES ('J0001', '10004', 2);
+
+SELECT * FROM jual;
+
+SELECT * FROM barang;
