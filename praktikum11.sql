@@ -56,3 +56,13 @@ BEGIN
 		where kode = new.kode;
 	end if;
 END //
+
+--1. Isikan data beli
+INSERT INTO barang VALUES 
+    ('10001','Buku123','ATK',5000,100,'101'),
+    ('10002','Buku007','ATK',5500,200,'505'),
+    ('10003','Pensil Panjang','ATK',1000,250,'101'),
+    ('10004','Indomie Udang','Makanan',2500,10,'201'),
+    ('10005','Indomie Kentang','Makanan',3000,100,'201'),
+   
+--2. 
