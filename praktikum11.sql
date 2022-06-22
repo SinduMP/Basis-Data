@@ -23,6 +23,7 @@ CREATE TABLE beli
 --1. TRIGGER insjual_updjumlah
 
 DELIMITER //
+
 CREATE TRIGGER insjual_updjumlah
 BEFORE INSERT
 ON jual
@@ -32,9 +33,11 @@ BEGIN
 	WHERE kode = new.kode;
 END//
 
+DELIMITER;
+
 --2. TRIGGER insbeli_updharga
 
-DELILITER //
+DELIMITER //
 CREATE TRIGGER insbeli_updharga
 BEFORE INSERT
 ON beli
