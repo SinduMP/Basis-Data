@@ -64,7 +64,7 @@ SELECT jurusan, nama FROM mahasiswa;
 SELECT * FROM detail_mhs;
 
 --VIEW untuk JOIN dan penambahan data
-CREATE VIEW detail_mhs AS
+CREATE VIEW detail_mhs1 AS
  SELECT nama, nim, mahasiswa.jurusan, nama_dekan
  FROM mahasiswa INNER JOIN universitas
  WHERE mahasiswa.jurusan = universitas.jurusan
@@ -74,14 +74,14 @@ CREATE VIEW detail_mhs_format AS
 SELECT
 UCASE(nama) AS 'Nama Mahasiswa',
 CONCAT(jurusan,' (', nama_dekan,')') AS 'Nama Jurusan dan Dekan'
-FROM detail_mhs;
+FROM detail_mhs1;
 
 SELECT * FROM detail_mhs_format;
 
 UPDATE universitas SET nama_dekan = 'Prof.Rika Susilawati M.Kom'
 WHERE jurusan = 'Ilmu Komputer';
 
-SELECT * FROM detail_mhs;
+SELECT * FROM detail_mhs1;
 
 SELECT * FROM detail_mhs_format;
 
@@ -115,3 +115,21 @@ INSERT INTO mahasiswa_ilkom VALUES
 
 
 --EVALUASI
+DROP TABLE IF EXISTS nilai_mahasiswa;
+
+CREATE TABLE nilai_mahasiswa (
+nim CHAR(8) PRIMARY KEY,
+nama VARCHAR(50),
+semester_1 DECIMAL(4,2),
+semester_2 DECIMAL(4,2),
+semester_3 DECIMAL(4,2)
+) ENGINE = InnoDB;
+
+INSERT INTO nilai_mahasiswa VALUES
+('17090113', 'Riana Putria', 3.12, 2.98, 3.45),
+('17140143', 'Rudi Permana', 2.56, 3.14, 3.22),
+('17080305', 'Rina Kumala Sari', 3.45, 2.56, 3.67),
+('17140119', 'Sandri Fatmala', 2.12, 2.78, 2.56),
+('17090308', 'Christine Wijaya', 3.78, 3.23, 3.11);
+
+--1.	Buat view nilai_ipk yang diambil dari tabel nilai_mahasiswa. View ini terdiri dari kolom nim, nama, dan IPK
