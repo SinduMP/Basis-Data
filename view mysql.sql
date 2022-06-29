@@ -133,3 +133,10 @@ INSERT INTO nilai_mahasiswa VALUES
 ('17090308', 'Christine Wijaya', 3.78, 3.23, 3.11);
 
 --1.	Buat view nilai_ipk yang diambil dari tabel nilai_mahasiswa. View ini terdiri dari kolom nim, nama, dan IPK
+CREATE VIEW nilai_ipk AS
+SELECT nim, nama, (semester_1+semester_2+semester_3)/3 as IPK
+FROM nilai_mahasiswa 
+ORDER BY nama ASC;
+
+SELECT * FROM nilai_ipk
+
