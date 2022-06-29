@@ -138,5 +138,16 @@ SELECT nim, nama, (semester_1+semester_2+semester_3)/3 as IPK
 FROM nilai_mahasiswa 
 ORDER BY nama ASC;
 
-SELECT * FROM nilai_ipk
+SELECT * FROM nilai_ipk;
+--+----------+------------------+----------+
+--| nim      | nama             | IPK      |
+--+----------+------------------+----------+
+--| 17090308 | Christine Wijaya | 3.373333 |
+--| 17090113 | Riana Putria     | 3.183333 |
+--| 17080305 | Rina Kumala Sari | 3.226667 |
+--| 17140143 | Rudi Permana     | 2.973333 |
+--| 17140119 | Sandri Fatmala   | 2.486667 |
+--+----------+------------------+----------+
+--5 rows in set (0.001 sec)
 
+--2. 
