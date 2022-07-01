@@ -151,3 +151,19 @@ SELECT * FROM nilai_ipk;
 --5 rows in set (0.001 sec)
 
 --2. 
+Create View nilai_ipk_format AS
+select 
+concat (nama,' (', IPK,')') AS 'Nama dan IPK'
+from nilai_ipk;
+
+ select * from nilai_ipk_format;
++-----------------------------+
+| Nama dan IPK                |
++-----------------------------+
+| Rina Kumala Sari (3.226667) |
+| Riana Putria (3.183333)     |
+| Christine Wijaya (3.373333) |
+| Sandri Fatmala (2.486667)   |
+| Rudi Permana (2.973333)     |
++-----------------------------+
+5 rows in set (0.002 sec)
