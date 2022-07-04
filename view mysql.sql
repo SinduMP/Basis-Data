@@ -154,7 +154,7 @@ SELECT * FROM nilai_ipk;
 Create View nilai_ipk_format AS
 select 
 concat (nama,' (', IPK,')') AS 'Nama dan IPK'
-from nilai_ipk;
+from nilai_ipk
 order by ipk desc;
 
  select * from nilai_ipk_format;
