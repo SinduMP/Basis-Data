@@ -172,7 +172,7 @@ SELECT * FROM nilai_ipk_format;
 
 --4.
 SELECT * FROM nilai_ipk_format
-WHERE 'Nama dan IPK' LIKE 'R%';
+WHERE `Nama dan IPK` LIKE 'R%';
 
 
 --5 
