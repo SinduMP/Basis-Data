@@ -10,5 +10,15 @@ CREATE TABLE karyawan(
  	jenis_kelamin VARCHAR(10)
 );
 
--- lihat struktur tabel kryawan
-desc karyawan;
+DESC karyawan;
+--+---------------+-------------+------+-----+---------+----------------+
+--| Field         | Type        | Null | Key | Default | Extra          |
+--+---------------+-------------+------+-----+---------+----------------+
+--| id            | int(3)      | NO   | PRI | NULL    | auto_increment |
+--| nama          | varchar(30) | YES  |     | NULL    |                |
+--| alamat        | text        | YES  |     | NULL    |                |
+--| umur          | int(3)      | YES  |     | NULL    |                |
+--| jenis_kelamin | varchar(10) | YES  |     | NULL    |                |
+--+---------------+-------------+------+-----+---------+----------------+
+--5 rows in set (0.021 sec)
+
