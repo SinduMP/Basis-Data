@@ -1,6 +1,6 @@
 --Create database PBD_namakalian
-CREATE DATABASE PBD_Sindu;
-use PDB_Sindu;
+CREATE DATABASE PBD_namakalian;
+use PDB_namakalian;
 --Membuat tabel karyawan
 CREATE TABLE karyawan(
 	id int (3),
