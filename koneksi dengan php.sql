@@ -29,3 +29,11 @@ INSERT INTO karyawan (nama,alamat,umur,jenis_kelamin) VALUES(
 '20',
 'Laki-laki');
 
+SELECT * FROM karyawan;
+--+----+---------------+----------+------+---------------+
+--| id | nama          | alamat   | umur | jenis_kelamin |
+--+----+---------------+----------+------+---------------+
+--|  1 | Sindu Masri P | Semarang |   20 | Laki-laki     |
+--+----+---------------+----------+------+---------------+
+--1 row in set (0.006 sec)
+
