@@ -22,3 +22,10 @@ DESC karyawan;
 --+---------------+-------------+------+-----+---------+----------------+
 --5 rows in set (0.021 sec)
 
+-- Mengisi tabel (Silahkan isi data kalian)
+INSERT INTO karyawan (nama,alamat,umur,jenis_kelamin) VALUES(
+'Sindu Masri P',
+'Semarang',
+'20',
+'Laki-laki');
+
