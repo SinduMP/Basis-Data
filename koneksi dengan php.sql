@@ -39,11 +39,21 @@ SELECT * FROM karyawan;
 
 --masuk ke folder htdoc pada XAMMP dab buatlah file PHP lalu isi dengan code berikut
 <?php
-$connect = mysqli_connect('localhost', 'root', '', 'PBD_Sindu');
+$connect = mysqli_connect('localhost', 'root', '', 'PBD_namakalian');
  
 if($connect)
     echo "Berhasil";
 else
     echo "Gagal";
+ 
+?>
+
+--Dikarenakan sistem sudah berhasil terhubung ke database, maka kita tidak perlu menampilkan tulisan “Berhasil”. Hapus if statement yang sebelumnya ditulis, kemudian ubah kode file connection.php menjadi seperti berikut.
+<?php
+$connect = mysqli_connect('localhost', 'root', '', 'PBD_namakalian');
+ 
+if(!$connect)
+    exit("Gagal Koneksi Database");
+
  
 ?>
