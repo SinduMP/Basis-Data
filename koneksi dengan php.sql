@@ -57,3 +57,14 @@ if(!$connect)
 
  
 ?>
+
+--Setelah PHP berhasil terhubung ke database, selanjutnya kita buat skip yang berfungsi untuk menampilkan data. Buat file baru bernama list.php, kemudian tambahkan kode PHP sebagai berikut
+<?php
+include('connection.php');
+
+$query = mysqli_query($connect, "SELECT * FROM karyawan");
+$results = mysqli_fetch_all($query, MYSQLI_ASSOC);
+
+print_r($results);
+?>
+
