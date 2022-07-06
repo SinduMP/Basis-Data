@@ -37,3 +37,13 @@ SELECT * FROM karyawan;
 --+----+---------------+----------+------+---------------+
 --1 row in set (0.006 sec)
 
+--masuk ke folder htdoc pada XAMMP dab buatlah file PHP lalu isi dengan code berikut
+<?php
+$connect = mysqli_connect('localhost', 'root', '', 'PBD_Sindu');
+ 
+if($connect)
+    echo "Berhasil";
+else
+    echo "Gagal";
+ 
+?>
