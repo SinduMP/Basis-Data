@@ -2,12 +2,6 @@
 CREATE DATABASE PBD_Sindu;
 use PDB_Sindu;
 --Membuat tabel karyawan
-CREATE TABLE karyawan;
---Input data karyawan
-INSERT
-
-
--- Struktur tabel karyawan
 CREATE TABLE karyawan(
 	id int (3),
 	nama VARCHAR(30),
