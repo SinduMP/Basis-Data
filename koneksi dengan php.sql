@@ -9,3 +9,6 @@ CREATE TABLE karyawan(
 	umur int(3),
  	jenis_kelamin VARCHAR(10)
 );
+
+-- lihat struktur tabel kryawan
+desc karyawan;
